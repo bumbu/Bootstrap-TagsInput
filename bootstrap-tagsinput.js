@@ -28,10 +28,8 @@
       this.$element.wrap('<div class="tagsinput"/>')
       this.parent = this.$element.parent().css('width', this.options.width)
 
-      this.$hidden_input = $('<input type="hidden"/>').attr('name', this.$element.attr('name')).appendTo(this.parent)
+      this.$hidden_input = $('<input type="hidden"/>').attr('name', this.$element.attr('name') + '_tags').appendTo(this.parent)
       this.parent.append($('<div class="clearfix"/>'))
-
-      this.$element.attr('name', Math.random())
 
       this.listen()
     }
