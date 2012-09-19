@@ -46,13 +46,13 @@
         case 'space':
           options.format_pattern = /([\w\-]+)(\s)/g
           options.format_joiner = function (tags) {
-            return tags.join(' ')
+            return tags.join(' ') + " "
           }
           break
         case 'comma':
           options.format_pattern = /([\w\s\-]+)(\,)/g
           options.format_joiner = function (tags) {
-            return tags.join(',')
+            return tags.join(',') + ","
           }
           break
         case 'square_brackets':
@@ -147,7 +147,7 @@
   , createDOMTag: function (tag) {
       var $this = this
         , $tag = $('<a class="btn btn-mini">' + tag + ' </a>')
-        , $tag_close = $('<i class="icon-remove"></i>').click(function(){$this.removeDOMTag(this)})
+        , $tag_close = $('<i class="icon-remove"></i>').click(function(){$this.removeDOMTag(this)}) // TODO use $.proxy
 
         $tag.append($tag_close).insertBefore(this.$element)
     }
