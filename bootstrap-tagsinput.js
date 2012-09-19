@@ -126,7 +126,7 @@
       if(this.tags.indexOf(tag) == -1){
         this.tags.push(tag)
         
-        // add tag to hidden input
+        // update hidden input
         this.$hidden_input.val(this.formatTags())
 
         this.createDOMTag(tag)
@@ -139,6 +139,9 @@
   , removeTag: function (tag) {
     if(this.tags.indexOf(tag) > -1){
       this.tags.remove(this.tags.indexOf(tag))
+
+      // update hidden input
+      this.$hidden_input.val(this.formatTags())
     }
   }
 
