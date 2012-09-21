@@ -40,6 +40,13 @@
           <input class="input-xxlarge" id="tagsinput_square_brackets" name="tags" size="16" type="text" value="[2009][2012][Fun][Space]" placeholder="[tag]">
         </div>
       </div>
+      <hr>
+      <div class="row">
+        <div class="span3">Tags disabled</div>
+        <div class="span9">
+          <input class="input-xxlarge" id="tagsinput_disabled" name="tags" size="16" type="text" value="Fun Tag Car Atmosphere " placeholder="[tag]">
+        </div>
+      </div>
     </div>
 
     <!-- Le javascript
@@ -53,6 +60,7 @@
         $('#tagsinput_space').tagsinput()
         $('#tagsinput_comma').tagsinput({format: 'comma'})
         $('#tagsinput_square_brackets').tagsinput({format: 'square_brackets'})
+        $('#tagsinput_disabled').tagsinput({editable: false})
       })
     </script>
   </body>

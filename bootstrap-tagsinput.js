@@ -31,7 +31,12 @@
       this.$hidden_input = $('<input type="hidden"/>').attr('name', this.$element.attr('name') + '_tags').appendTo(this.parent)
       this.parent.append($('<div class="clearfix"/>'))
 
-      this.listen()
+      if(this.options.editable){
+        this.listen()
+      }else{
+        this.keyup()
+        this.$element.attr('disabled', true)
+      }
     }
 
   , getOptions: function (options) {
