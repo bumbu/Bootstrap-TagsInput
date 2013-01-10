@@ -2,10 +2,10 @@ ToDo
 ===========
 - [ ] Add more options
   - [ ] Wrapper
-  - [ ]Tags template
+  - [ ] Tags template
   - [ ] On click action
   - [ ] Give option to save tags as an array
-  - [ ] Tags removable
+  - [x] Tags removable
 - [ ] Refactor code
 - [ ] Add tags (git) (should correspond with bootstrap)
 - [ ] Add licence

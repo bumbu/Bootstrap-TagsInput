@@ -162,7 +162,7 @@ if(Array.prototype.remove === undefined)
         , $tag = $('<a class="btn btn-mini">' + tag + ' </a>')
         , $tag_close = $('<i class="icon-remove"></i>').click(function(){$this.removeDOMTag(this)}) // TODO use $.proxy
 
-      if (this.options.editable) {
+      if (this.options.editable && this.options.removable) {
         $tag.append($tag_close)
       }
 
@@ -197,6 +197,7 @@ if(Array.prototype.remove === undefined)
   $.fn.tagsinput.defaults = {
     format: 'space'
   , editable: true
+  , removable: true
   , min_width: 30
   }
 
