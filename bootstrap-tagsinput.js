@@ -3,6 +3,13 @@
 
  * ========================================================== */
 
+if(Array.prototype.remove === undefined)
+  Array.prototype.remove = function(from, to) {
+    var rest = this.slice((to || from) + 1 || this.length)
+    this.length = from < 0 ? this.length + from : from
+    return this.push.apply(this, rest)
+  }
+
 
 !function ($) {
 
@@ -142,8 +149,8 @@
     }
 
   , removeTag: function (tag) {
-    if(this.tags.indexOf(tag) > -1){
-      this.tags.remove(this.tags.indexOf(tag))
+      if(this.tags.indexOf(tag) > -1){
+        this.tags.remove(this.tags.indexOf(tag))
 
       // update hidden input
       this.$hidden_input.val(this.formatTags())
