@@ -52,6 +52,7 @@ if(Array.prototype.remove === undefined)
       options.width = this.$element.outerWidth()
       options.horizontal_padding = options.width - this.$element.width() + 2 // +2 for borders TODO
 
+      // Load default formatters
       switch (options.format) {
         case 'space':
           options.format_pattern = /([\w\-]+)(\s)/g
