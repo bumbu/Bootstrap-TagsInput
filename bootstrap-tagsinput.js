@@ -32,7 +32,7 @@ if(Array.prototype.remove === undefined)
       this.options = this.getOptions(options)
       this.tags = []
 
-      this.$element.wrap('<div class="tagsinput"/>')
+      this.$element.wrap(this.options.templates.wrapper)
       this.parent = this.$element.parent().css('width', this.options.width)
 
       this.$hidden_input = $('<input type="hidden"/>').attr('name', this.$element.attr('name') + '_tags').appendTo(this.parent)
@@ -160,11 +160,10 @@ if(Array.prototype.remove === undefined)
 
   , createDOMTag: function (tag) {
       var $this = this
-        , $tag = $('<a class="btn btn-mini">' + tag + ' </a>')
-        , $tag_close = $('<i class="icon-remove"></i>').click(function(){$this.removeDOMTag(this)}) // TODO use $.proxy
+        , $tag = $(this.options.templates.tag.replace(/\{tag\}/g, tag))
 
       if (this.options.editable && this.options.removable) {
-        $tag.append($tag_close)
+        $tag.find('[data-remove="tag"]').click(function(){$this.removeDOMTag(this)})
       }
 
       $tag.insertBefore(this.$element)
@@ -200,6 +199,10 @@ if(Array.prototype.remove === undefined)
   , editable: true
   , removable: true
   , min_width: 30
+  , templates: {
+      tag: '<a class="btn btn-mini">{tag} <i class="icon-remove" data-remove="tag"/></a>'
+    , wrapper: '<div class="tagsinput"/>'
+    }
   }
 
 }(window.jQuery);

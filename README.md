@@ -1,8 +1,6 @@
 ToDo
 ===========
 * Add more options
-  * Wrapper
-  * Tags template
   * On click action
   * Give option to save tags as an array
 * Refactor code
